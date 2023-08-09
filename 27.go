@@ -8,12 +8,11 @@ func main() {
 
 func removeElement(nums []int, val int) int {
 	j := 0
-	
-	for i, num := range nums {
-		if num == val {
-			nums[i], nums[i+1] = nums[i+1], nums[i]
+	for _, num := range nums {
+		if num != val {
+			nums[j] = num
 			j++
 		}
 	}
-	return len(nums) - j
+	return j
 }
